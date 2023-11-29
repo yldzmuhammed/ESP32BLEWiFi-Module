@@ -1,0 +1,365 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD19\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">13.10.2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">21:39:33</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc" class="file"><acronym title="P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc">P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">11</td></tr>
+</table>
+</td>
+</table><a name="IDBKHM51UCA1WFP3AV0N02UYOB0HZWAL2EUGQO1AIKY5RTLON50JSL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYRLUNA4IXVWSPFHZN0DMLDQO5IZOOS0ICHOTOPHNSDUL0QTIQD0C">Clearance Constraint (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2DQ2RVMLNTG5GIDPG5SIIOH3YD2C5DYVR2U2E5EXYSEO3QPFXTCE">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOGLQO05CUKJ4IZJHH2BNMZZ4ACJXPFG1R3XKEPEQXXRVF4O3MQTB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRHCZL0HAQG10B1MSKXW0RJWYSPLX5SAVD10ZW3IGIJPNEVGL200B">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGB45UW30F2OAIXU4GQ23QZPYAKNRY0R322QYIXITR1W3VF3KHAIH">Width Constraint (Min=0.127mm) (Max=1mm) (Preferred=0.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXUPG0OFYFYR3HKQTVVK0DZ22QPXJMVIOMCJKZ0DIJWJDGI4CMIRD">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZVNXXY20ZMUAF0F2XQDB3NNJVLYTGEGJPXGZA3M4AUCJVLQ1CVSK">Hole Size Constraint (Min=0.025mm) (Max=5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEUKD5YAUWSSABWAJ04OINJDQTKN0ZM5AKTFH0QNOHNV4BYERCYVD">Hole To Hole Clearance (Gap=0.127mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXKYUQEXS3NDDBZ0N53FGHZ0O3JO1ZUYPGSHGQKLOONI0K0QIXOMJ">Minimum Solder Mask Sliver (Gap=0.01mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXPCJC35EXJDZP5AHTINSWVRABHDKFLKMQIUDLTDSP34MOT4E14FH">Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNUS221RNCZRIGMIGBYNTPDSWZKXIIN20NCJL5KOAB44CCLMP3AIO">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">11</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLE3U2G5U1AGVEXDO5BO1IEJQGPWG1JB144V2QWJFYCOFFCOSHDTN">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDASXAZLYIVDQQEQ5EFWIE42Z2MFNVQ4L3JA5335F0RKGPJ02N0BQN">Room WiFi-BLE Module (Bounding Region = (59.825mm, 69.7mm, 84.625mm, 107.175mm) (InComponentClass('WiFi-BLE Module'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQVPAORUMRLVHLLFSOW3NLWY5YLTFACYLBH0FMWKINBJHZ42FZPUC">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">11</td>
+</tr>
+</table><br><a name="IDNUS221RNCZRIGMIGBYNTPDSWZKXIIN20NCJL5KOAB44CCLMP3AIO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3228.806mil|Location2.X=3241.791mil|Location1.Y=3262.091mil|Location2.Y=3273.341mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3228.806mil|Location2.X=3241.791mil|Location1.Y=3262.091mil|Location2.Y=3273.341mil|Absolute=True">Silk To Silk Clearance Constraint: (0.167mm &lt; 0.254mm) Between Arc (22.325mm,12.7mm) on Top Overlay And Text "IC1" (20.35mm,13.075mm) on Top Overlay Silk Text to Silk Clearance [0.167mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2396.846mil|Location2.X=2408.096mil|Location1.Y=3525.438mil|Location2.Y=3536.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2396.846mil|Location2.X=2408.096mil|Location1.Y=3525.438mil|Location2.Y=3536.688mil|Absolute=True">Silk To Silk Clearance Constraint: (0.225mm &lt; 0.254mm) Between Text "A1" (1.025mm,19.75mm) on Top Overlay And Track (1.02mm,19.215mm)(1.02mm,19.515mm) on Top Overlay Silk Text to Silk Clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2409.947mil|Location2.X=2421.197mil|Location1.Y=3524.464mil|Location2.Y=3535.714mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2409.947mil|Location2.X=2421.197mil|Location1.Y=3524.464mil|Location2.Y=3535.714mil|Absolute=True">Silk To Silk Clearance Constraint: (0.171mm &lt; 0.254mm) Between Text "A1" (1.025mm,19.75mm) on Top Overlay And Track (1.02mm,19.515mm)(3.62mm,19.515mm) on Top Overlay Silk Text to Silk Clearance [0.171mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.676mil|Location2.X=3272.926mil|Location1.Y=3014.628mil|Location2.Y=3026.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.676mil|Location2.X=3272.926mil|Location1.Y=3014.628mil|Location2.Y=3026.853mil|Absolute=True">Silk To Silk Clearance Constraint: (0.246mm &lt; 0.254mm) Between Text "C2" (23.1mm,6.8mm) on Top Overlay And Track (20.05mm,6.825mm)(22.85mm,6.825mm) on Top Overlay Silk Text to Silk Clearance [0.246mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.589mil|Location2.X=3272.839mil|Location1.Y=2976.425mil|Location2.Y=2987.675mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.589mil|Location2.X=3272.839mil|Location1.Y=2976.425mil|Location2.Y=2987.675mil|Absolute=True">Silk To Silk Clearance Constraint: (0.177mm &lt; 0.254mm) Between Text "C2" (23.1mm,6.8mm) on Top Overlay And Track (22.85mm,5.425mm)(22.85mm,5.725mm) on Top Overlay Silk Text to Silk Clearance [0.177mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.512mil|Location2.X=3272.762mil|Location1.Y=3008.165mil|Location2.Y=3019.415mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.512mil|Location2.X=3272.762mil|Location1.Y=3008.165mil|Location2.Y=3019.415mil|Absolute=True">Silk To Silk Clearance Constraint: (0.171mm &lt; 0.254mm) Between Text "C2" (23.1mm,6.8mm) on Top Overlay And Track (22.85mm,6.525mm)(22.85mm,6.825mm) on Top Overlay Silk Text to Silk Clearance [0.171mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.455mil|Location2.X=3271.705mil|Location1.Y=2951.6mil|Location2.Y=2962.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.455mil|Location2.X=3271.705mil|Location1.Y=2951.6mil|Location2.Y=2962.85mil|Absolute=True">Silk To Silk Clearance Constraint: (0.249mm &lt; 0.254mm) Between Text "C3" (23.05mm,5.175mm) on Top Overlay And Track (20.05mm,5.262mm)(22.85mm,5.262mm) on Top Overlay Silk Text to Silk Clearance [0.249mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.619mil|Location2.X=3272.869mil|Location1.Y=2914.613mil|Location2.Y=2925.863mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3261.619mil|Location2.X=3272.869mil|Location1.Y=2914.613mil|Location2.Y=2925.863mil|Absolute=True">Silk To Silk Clearance Constraint: (0.177mm &lt; 0.254mm) Between Text "C3" (23.05mm,5.175mm) on Top Overlay And Track (22.85mm,3.862mm)(22.85mm,4.162mm) on Top Overlay Silk Text to Silk Clearance [0.177mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.505mil|Location2.X=3271.755mil|Location1.Y=2944.641mil|Location2.Y=2955.891mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.505mil|Location2.X=3271.755mil|Location1.Y=2944.641mil|Location2.Y=2955.891mil|Absolute=True">Silk To Silk Clearance Constraint: (0.124mm &lt; 0.254mm) Between Text "C3" (23.05mm,5.175mm) on Top Overlay And Track (22.85mm,4.962mm)(22.85mm,5.262mm) on Top Overlay Silk Text to Silk Clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.94mil|Location2.X=3272.19mil|Location1.Y=3038.687mil|Location2.Y=3051.689mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.94mil|Location2.X=3272.19mil|Location1.Y=3038.687mil|Location2.Y=3051.689mil|Absolute=True">Silk To Silk Clearance Constraint: (0.173mm &lt; 0.254mm) Between Text "C5" (23.075mm,8.3mm) on Top Overlay And Track (22.85mm,7mm)(22.85mm,7.3mm) on Top Overlay Silk Text to Silk Clearance [0.173mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.731mil|Location2.X=3271.981mil|Location1.Y=3065.093mil|Location2.Y=3077.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3260.731mil|Location2.X=3271.981mil|Location1.Y=3065.093mil|Location2.Y=3077.015mil|Absolute=True">Silk To Silk Clearance Constraint: (0.199mm &lt; 0.254mm) Between Text "C5" (23.075mm,8.3mm) on Top Overlay And Track (22.85mm,8.1mm)(22.85mm,8.4mm) on Top Overlay Silk Text to Silk Clearance [0.199mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

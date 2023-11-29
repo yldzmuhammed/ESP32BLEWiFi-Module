@@ -1,0 +1,11 @@
+Output: WiFiModule BOM
+Type  : BOM
+From  : Variant [[No Variations]] of Project [WiFi-BLE Module.PrjPcb]
+   Generated File[WiFiModule BOM-WiFi-BLE Module.xls]
+   Generated File[WiFiModule BOM-WiFi-BLE Module.xls]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 21:51:28 On 13.10.2020

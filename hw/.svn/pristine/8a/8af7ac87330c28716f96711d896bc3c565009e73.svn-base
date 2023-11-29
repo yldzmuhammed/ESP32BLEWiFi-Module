@@ -1,0 +1,18 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: WiFi-BLE Module.PcbDoc   13.10.2020  21:51:12
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : WiFi-BLE Module.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)            +0.08mm (3mil)                    Round             34        PTH        0.00mm (0.00inch)
+T2      0.2mm (8mil)                                              Round             1         PTH        0.00mm (0.00inch)
+T3      0.3mm (12mil)           +/-0.08mm (3mil)                  Round             28        PTH        0.00mm (0.00inch)
+T4      1mm (39mil)                                               Round             2         PTH        0.00mm (0.00inch)
+T5      3mm (118mil)                                              Round             2         PTH        0.00mm (0.00inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              67
+
+Total Processing Time (hh:mm:ss) : 00:00:00

@@ -1,0 +1,62 @@
+Protel Design System Design Rule Check
+PCB File : P:\YILDIZIoT\Communication Modules\WiFi-BLE Module\hw\WiFi-BLE Module.PcbDoc
+Date     : 13.10.2020
+Time     : 21:39:33
+
+Processing Rule : Clearance Constraint (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.127mm) (Max=1mm) (Preferred=0.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=5mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.127mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.01mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (0.167mm < 0.254mm) Between Arc (22.325mm,12.7mm) on Top Overlay And Text "IC1" (20.35mm,13.075mm) on Top Overlay Silk Text to Silk Clearance [0.167mm]
+   Violation between Silk To Silk Clearance Constraint: (0.225mm < 0.254mm) Between Text "A1" (1.025mm,19.75mm) on Top Overlay And Track (1.02mm,19.215mm)(1.02mm,19.515mm) on Top Overlay Silk Text to Silk Clearance [0.225mm]
+   Violation between Silk To Silk Clearance Constraint: (0.171mm < 0.254mm) Between Text "A1" (1.025mm,19.75mm) on Top Overlay And Track (1.02mm,19.515mm)(3.62mm,19.515mm) on Top Overlay Silk Text to Silk Clearance [0.171mm]
+   Violation between Silk To Silk Clearance Constraint: (0.246mm < 0.254mm) Between Text "C2" (23.1mm,6.8mm) on Top Overlay And Track (20.05mm,6.825mm)(22.85mm,6.825mm) on Top Overlay Silk Text to Silk Clearance [0.246mm]
+   Violation between Silk To Silk Clearance Constraint: (0.177mm < 0.254mm) Between Text "C2" (23.1mm,6.8mm) on Top Overlay And Track (22.85mm,5.425mm)(22.85mm,5.725mm) on Top Overlay Silk Text to Silk Clearance [0.177mm]
+   Violation between Silk To Silk Clearance Constraint: (0.171mm < 0.254mm) Between Text "C2" (23.1mm,6.8mm) on Top Overlay And Track (22.85mm,6.525mm)(22.85mm,6.825mm) on Top Overlay Silk Text to Silk Clearance [0.171mm]
+   Violation between Silk To Silk Clearance Constraint: (0.249mm < 0.254mm) Between Text "C3" (23.05mm,5.175mm) on Top Overlay And Track (20.05mm,5.262mm)(22.85mm,5.262mm) on Top Overlay Silk Text to Silk Clearance [0.249mm]
+   Violation between Silk To Silk Clearance Constraint: (0.177mm < 0.254mm) Between Text "C3" (23.05mm,5.175mm) on Top Overlay And Track (22.85mm,3.862mm)(22.85mm,4.162mm) on Top Overlay Silk Text to Silk Clearance [0.177mm]
+   Violation between Silk To Silk Clearance Constraint: (0.124mm < 0.254mm) Between Text "C3" (23.05mm,5.175mm) on Top Overlay And Track (22.85mm,4.962mm)(22.85mm,5.262mm) on Top Overlay Silk Text to Silk Clearance [0.124mm]
+   Violation between Silk To Silk Clearance Constraint: (0.173mm < 0.254mm) Between Text "C5" (23.075mm,8.3mm) on Top Overlay And Track (22.85mm,7mm)(22.85mm,7.3mm) on Top Overlay Silk Text to Silk Clearance [0.173mm]
+   Violation between Silk To Silk Clearance Constraint: (0.199mm < 0.254mm) Between Text "C5" (23.075mm,8.3mm) on Top Overlay And Track (22.85mm,8.1mm)(22.85mm,8.4mm) on Top Overlay Silk Text to Silk Clearance [0.199mm]
+Rule Violations :11
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room WiFi-BLE Module (Bounding Region = (59.825mm, 69.7mm, 84.625mm, 107.175mm) (InComponentClass('WiFi-BLE Module'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 11
+Waived Violations : 0
+Time Elapsed        : 00:00:01
